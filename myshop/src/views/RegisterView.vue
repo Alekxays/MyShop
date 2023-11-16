@@ -5,45 +5,16 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
     <div class="login-page">
       <div class="form">
-        <form  class="login-form" v-on:submit.prevent="login">
-          <input type="text" v-model="formData.email" placeholder="Email"/>
-          <input type="password" v-model="formData.password" placeholder="Password"/>
-          <button>login</button>
-          <p class="message">Not registered? <RouterLink to="/register">Create an account</RouterLink></p>
+        <form class="register-form">
+          <input type="text" placeholder="Name"/>
+          <input type="password" placeholder="Password"/>
+          <input type="text" placeholder="Email"/>
+          <button>create</button>
+          <p class="message">Already registered? <RouterLink to="/login">Sign In</RouterLink></p>
         </form>
       </div>
     </div>
 </template>
-
-<script>
-import axios from 'axios';
-
-export default {
-  data() {
-    return {
-      formData: {
-        email: '',
-        password: ''
-      }
-    };
-  },
-  methods: {
-    login() {
-      axios.post('http://localhost/authentication_token', this.formData)
-        .then(response => {
-          const token = response.data.token;
-          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-          alert('Successfully logged in')
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
-  }
-}
-
-
-</script>
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);

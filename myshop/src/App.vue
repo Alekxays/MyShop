@@ -12,7 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="SearchBar">
         <input type="text" class="searchTerm" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search">🔎</i>
      </button>
       </div>
       <div class="Login"><RouterLink to="/login"><button class="btn">Login</button></RouterLink></div>

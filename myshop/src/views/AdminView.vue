@@ -1,19 +1,31 @@
 <template>
-  <body>
-    <div id="menu">
-        <h1>Products</h1>
-        <h1>Catégories</h1>
-        <h1>Users</h1>
-    </div>
-  </body>
+  <div class="menu">
+    <h2><RouterLink to="products">Products</RouterLink></h2>
+    <h2><RouterLink to="categories">Categories</RouterLink></h2>
+    <h2><RouterLink to="users">Users</RouterLink></h2>
+  </div>
+  <RouterView />
 </template>
-  
+
 <style>
-#menu {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.menu {
   display: flex;
-}
-#menu > h1 {
+  justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.menu > h2 {
+  font-family: "Roboto", sans-serif;
+  margin: 20px;
+  padding-top: 20px;
+  color: #6EC4FC;
+  text-decoration: underline;
 }
 </style>
-  
+
+<script>
+
+</script>
