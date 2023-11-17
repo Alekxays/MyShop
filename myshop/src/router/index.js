@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import axios from 'axios';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,8 +44,31 @@ const router = createRouter({
           component: () => import('../views/Users.vue'),
         },
       ],
+      meta: { requiresAuth: true },
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = checkAuthentication();
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+
+  if (requiresAuth && !isAuthenticated) {
+    alert("Access unauthorized")
+    next('/login'); 
+  } else {
+    next(); 
+  }
+});
+
+function checkAuthentication() {
+  const token = axios.defaults.headers.common['Authorization'];
+  if (token && token.startsWith('Bearer ')) {
+    const tokenValue = token.split(' ')[1];
+    return true;
+  }
+  return false; 
+}
+
 
 export default router

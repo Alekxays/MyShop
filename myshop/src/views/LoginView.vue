@@ -34,6 +34,7 @@ export default {
           const token = response.data.token;
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
           alert('Successfully logged in')
+          this.$router.push("/admin")
         })
         .catch(error => {
           console.error(error);

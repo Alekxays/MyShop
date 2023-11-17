@@ -3,6 +3,9 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
   <header>
     <div class="container">
       <div class="Logo">
@@ -12,7 +15,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="SearchBar">
         <input type="text" class="searchTerm" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">
-        <i class="fa fa-search">🔎</i>
+        <i class="fa fa-search"></i>
      </button>
       </div>
       <div class="Login"><RouterLink to="/login"><button class="btn">Login</button></RouterLink></div>
