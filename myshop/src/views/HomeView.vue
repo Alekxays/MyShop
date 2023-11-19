@@ -1,15 +1,69 @@
 <template>
+    <div class="header">
+
+    </div>
+
     <div class="shop-container">
        <div class="grid">
-         <div class="grid-item" v-for="product in products" :key="product.id">
+        <router-link style="text-decoration: none; color: inherit;" v-for="product in products" :key="product.id" :to="'/products/' + product.id">
+         <div class="grid-item">
            <img class="img" src="../assets/img_product.png" alt="product.name" />
                 <h3 class="product-name">{{ product.name }}</h3>
                 <p class="category">{{ product.category }}</p>
                 <p class="price">{{ product.price }} €</p>
                 <div class="rating">★★★★☆</div>
          </div>
+        </router-link>
        </div>
     </div>
+
+    <footer class="footer-distributed">
+
+<div class="footer-left">
+
+  <h3>My<span>Shop</span></h3>
+  <p class="footer-company-name">MyShop © 2023</p>
+</div>
+
+<div class="footer-center">
+
+  <div>
+    <i class="fa fa-map-marker"></i>
+    <p><span>95 Avenue Parmentier</span> Paris, France</p>
+  </div>
+
+  <div>
+    <i class="fa fa-phone"></i>
+    <p>+33 000000000</p>
+  </div>
+
+  <div>
+    <i class="fa fa-envelope"></i>
+    <p><a href="mailto:support@company.com">support@myshop.com</a></p>
+  </div>
+
+</div>
+
+<div class="footer-right">
+
+  <p class="footer-company-about">
+    <span>About the company</span>
+    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+  </p>
+
+  <div class="footer-icons">
+
+    <a href="https://www.instagram.com/arthur_wlr/"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.instagram.com/igtbz/"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/alexandre-boissel-5202a5273/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://github.com/ZadoxYT"><i class="fa fa-github"></i></a>
+
+  </div>
+
+</div>
+
+</footer>
+
    </template>
    
    <script>
@@ -54,7 +108,7 @@
    <style scoped>
    .shop-container {
     padding-top: 5%;
-    max-width: 90%;
+    max-width: 87%;
     margin: 0 auto;
    }
    
@@ -73,4 +127,26 @@
    .img {
     width: 70%;
    }
+
+   .product-name {
+    position: relative;
+    right: 36%;
+   }
+
+   .category{
+    position: relative;
+    right: 36%;
+   }
+
+   .price {
+    position: relative;
+    left: 40%;
+    font-weight: bold;
+   }
+
+   .rating {
+    position: relative;
+    right: 36%;
+   }
+
    </style>

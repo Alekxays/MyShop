@@ -11,7 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="Logo">
         <RouterLink to="/"><img class="logo" src="./assets/logo.png" alt=""></RouterLink>
       </div>
-      <div class="Name"><h1 id="title">MyShop</h1></div>
+      <div class="Name"><RouterLink style="text-decoration: none; color: inherit;" to="/"><h1 id="title">MyShop</h1></RouterLink></div>
       <div class="SearchBar">
         <input type="text" class="searchTerm" placeholder="What are you looking for?">
       <button type="submit" class="searchButton">

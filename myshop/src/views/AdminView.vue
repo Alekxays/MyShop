@@ -1,8 +1,8 @@
 <template>
   <div class="menu">
-    <h2><RouterLink to="products">Products</RouterLink></h2>
-    <h2><RouterLink to="categories">Categories</RouterLink></h2>
-    <h2><RouterLink to="users">Users</RouterLink></h2>
+    <h2><RouterLink style="text-decoration: none; color: inherit;" to="products">Products</RouterLink></h2>
+    <h2><RouterLink style="text-decoration: none; color: inherit;" to="categories">Categories</RouterLink></h2>
+    <h2><RouterLink style="text-decoration: none; color: inherit;" to="users">Users</RouterLink></h2>
   </div>
   <RouterView />
 </template>
